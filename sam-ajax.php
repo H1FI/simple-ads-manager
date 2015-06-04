@@ -8,12 +8,7 @@
 define('DOING_AJAX', true);
 
 if (!isset( $_POST['action'])) die('-1');
-if (isset( $_POST['level'] )) {
-  $rootLevel = intval($_POST['level']);
-  $root = dirname( __FILE__ );
-  for( $i = 0; $i < $rootLevel; $i++ ) $root = dirname( $root );
-}
-else $root = dirname(dirname(dirname(dirname(__FILE__))));
+$root = dirname(dirname(dirname(dirname(__FILE__))));
 
 ini_set('html_errors', 0);
 
